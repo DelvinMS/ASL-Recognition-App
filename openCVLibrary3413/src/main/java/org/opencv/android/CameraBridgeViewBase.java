@@ -411,21 +411,21 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
             // rotate canvas by 90 degree
             // for portrait mode
             // now you hava to scale frame according to your phone
-            float mScale1=0;
-            float mScale2=0;
-            if(canvas.getHeight()>canvas.getWidth()){
+//            float mScale1=0;
+//            float mScale2=0;
+//            if(canvas.getHeight()>canvas.getWidth()){
                 canvas.rotate(90f,canvas.getWidth()/2,canvas.getHeight()/2);
-                // for my Phone my scale values are
-
-                // Change scaling of frame
-                mScale1=(float) canvas.getHeight()/(float) mCacheBitmap.getWidth();
-                mScale2=(float) canvas.getWidth()/(float)mCacheBitmap.getHeight();
-
-            }
-            else{
-                mScale1=(float) canvas.getWidth()/(float)mCacheBitmap.getWidth();
-                mScale2=(float) canvas.getHeight()/(float)mCacheBitmap.getHeight();
-            }
+//                // for my Phone my scale values are
+//
+//                // Change scaling of frame
+//                mScale1=(float) canvas.getHeight()/(float) mCacheBitmap.getWidth();
+//                mScale2=(float) canvas.getWidth()/(float)mCacheBitmap.getHeight();
+//
+//            }
+//            else{
+//                mScale1=(float) canvas.getWidth()/(float)mCacheBitmap.getWidth();
+//                mScale2=(float) canvas.getHeight()/(float)mCacheBitmap.getHeight();
+//            }
 
 
 
@@ -434,24 +434,14 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
                 if (BuildConfig.DEBUG)
                     Log.d(TAG, "mStretch value: " + mScale);
 
-                //this code will scale canvas to fit your phone
-                // This was done in video:OpenCV Portrait Mode Camera For All Android Devices
-                // This will fix scaling problem in the app
-                // For better understanding watch video
-                // Select the device and run
-                // I will upload source code of this app
-                // You can download it
-                // It is working properly
-                // See you in next video
-                // Bye
 
 
-                if (mScale1 != 0) {
+                if (mScale != 0) {
                     canvas.drawBitmap(mCacheBitmap, new Rect(0,0,mCacheBitmap.getWidth(), mCacheBitmap.getHeight()),
-                            new Rect((int)((canvas.getWidth() - mScale1*mCacheBitmap.getWidth()) / 2),
-                                    (int)((canvas.getHeight() - mScale2*mCacheBitmap.getHeight()) / 2),
-                                    (int)((canvas.getWidth() - mScale1*mCacheBitmap.getWidth()) / 2 + mScale1*mCacheBitmap.getWidth()),
-                                    (int)((canvas.getHeight() - mScale2*mCacheBitmap.getHeight()) / 2 + mScale2*mCacheBitmap.getHeight())), null);
+                            new Rect((int)((canvas.getWidth() - mScale*mCacheBitmap.getWidth()) / 2),
+                                    (int)((canvas.getHeight() - mScale*mCacheBitmap.getHeight()) / 2),
+                                    (int)((canvas.getWidth() - mScale*mCacheBitmap.getWidth()) / 2 + mScale*mCacheBitmap.getWidth()),
+                                    (int)((canvas.getHeight() - mScale*mCacheBitmap.getHeight()) / 2 + mScale*mCacheBitmap.getHeight())), null);
                 }
                else {
                      canvas.drawBitmap(mCacheBitmap, new Rect(0,0,mCacheBitmap.getWidth(), mCacheBitmap.getHeight()),
