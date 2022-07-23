@@ -11,11 +11,13 @@
         android:layout_width="360dp"
         android:layout_height="362dp"
         android:layout_marginTop="52dp"
-        android:text="TextView"
-        android:textSize="34sp"
+        android:fontFamily="sans-serif-medium"
+        android:text="VISION is made for the purpose of translating American Sign Language letters to English text. Just point your camera at the sign you want to get translated.                        Happy Signing!"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.366" />
 </androidx.constraintlayout.widget.ConstraintLayout>
