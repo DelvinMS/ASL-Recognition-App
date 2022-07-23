@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,CameraActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
+        camera_button.setVisibility(View.GONE);
 
         combine_letter_button=findViewById(R.id.combine_letter_button);
         combine_letter_button.setOnClickListener(new View.OnClickListener() {
